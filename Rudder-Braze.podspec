@@ -11,7 +11,6 @@ Pod::Spec.new do |s|
   s.module_name         = 'RudderBraze'
   s.public_header_files = 'Rudder-Braze/Classes/**/*.h'
   s.requires_arc        = true
-  s.framework           = true
   s.description      = <<-DESC
 Rudder is a platform for collecting, storing and routing customer event data to dozens of tools. Rudder is open-source, can run in your cloud environment (AWS, GCP, Azure or even your data-centre) and provides a powerful transformation framework to process your event data on the fly.
                        DESC
