@@ -8,7 +8,10 @@ Pod::Spec.new do |s|
   s.name             = 'Rudder-Braze'
   s.version          = package['version']
   s.summary          = 'Privacy and Security focused Segment-alternative. Braze Native SDK integration support.'
-
+  s.module_name         = 'RudderBraze'
+  s.public_header_files = 'Rudder-Braze/Classes/**/*.h'
+  s.requires_arc        = true
+  s.framework           = true
   s.description      = <<-DESC
 Rudder is a platform for collecting, storing and routing customer event data to dozens of tools. Rudder is open-source, can run in your cloud environment (AWS, GCP, Azure or even your data-centre) and provides a powerful transformation framework to process your event data on the fly.
                        DESC
@@ -28,7 +31,7 @@ Rudder is a platform for collecting, storing and routing customer event data to 
   else
     Pod::UI.puts "#{s.name}: Using default Braze SDK version '#{braze_kit}'"
   end
-  
+
   if defined?($RudderSDKVersion)
       Pod::UI.puts "#{s.name}: Using user specified Rudder SDK version '#{$RudderSDKVersion}'"
       rudder_sdk_version = $RudderSDKVersion
