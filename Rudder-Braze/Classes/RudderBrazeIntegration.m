@@ -18,7 +18,7 @@ static Braze *rsBrazeInstance;
         self.config = config;
         self.client = client;
         self.supportDedup = [[config objectForKey:@"supportDedup"] boolValue] ? YES : NO;
-        NSString *apiToken = [config objectForKey:@"appKey"];
+        NSString *apiToken = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"BRAZE_API_KEY"];
         connectionMode = [self getConnectionMode:config];
         
         if ( [apiToken length] == 0) {
